@@ -1,2 +1,2 @@
-<%@ include file="/common/taglib.jsp" %>
-<c:redirect url="/quan-tri/trang-chu"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:redirect url="/trang-chu"/>
