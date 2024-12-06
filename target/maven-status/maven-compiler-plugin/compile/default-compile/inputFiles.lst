@@ -5,6 +5,7 @@ D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\controller\admin\NewController.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\paging\Sorter.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\service\impl\CustomUserDetailsService.java
+D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\api\admin\NewAPI.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\model\AbstractModel.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\dao\GenericDAO.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\util\SecurityUtils.java
@@ -24,6 +25,7 @@ D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\dto\MyUser.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\config\JpaAuditingConfig.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\repository\NewRepository.java
+D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\api\web\NewAPI.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\dto\AbstractDTO.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\service\INewService.java
 D:\Study\WorkSpace\Work Space Eclipse\OOP\WebGiaSu\src\main\java\com\spring\mvc\dao\INewDAO.java
