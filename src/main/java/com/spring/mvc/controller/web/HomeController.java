@@ -1,28 +1,92 @@
 package com.spring.mvc.controller.web;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.spring.mvc.dto.RegisterDTO;
+import com.spring.mvc.dto.TutorDTO;
+import com.spring.mvc.service.ITutorService;
+import com.spring.mvc.util.MessageUtil;
+import com.spring.mvc.util.SecurityUtils;
 
 @Controller(value = "homeControllerOfWeb")
 public class HomeController {
+	
+	@Autowired
+	private ITutorService tutorService;
+	
+	@Autowired
+	private MessageUtil messageUtil;
 
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
 	public ModelAndView homePage() {
+		TutorDTO model = new TutorDTO();
 		ModelAndView mav = new ModelAndView("web/home");
+		model.setListResult(tutorService.findAll());
+		mav.addObject("model", model);
 		return mav;
 	}
 	
+	@RequestMapping(value = "/info", method = RequestMethod.GET)
+	public ModelAndView infoTutor(@RequestParam(value = "userId", required = false) Long userId, HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("web/info");
+		TutorDTO model = new TutorDTO();
+		model.setUserID(SecurityUtils.getPrincipal().getId());
+		model.setFullName(SecurityUtils.getPrincipal().getFullName());
+		if (tutorService.findByUserId(userId) != null) {
+			model = tutorService.findByUserId(userId);
+		}
+		if (request.getParameter("message") != null) {
+			Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
+			mav.addObject("message", message.get("message"));
+			mav.addObject("alert", message.get("alert"));
+		}
+		mav.addObject("model", model);
+		return mav;
+	}
+	
+	@RequestMapping(value = "trang-chu/info", method = RequestMethod.GET)
+	public ModelAndView tutorDetail(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView("web/tutorDetail");
+		TutorDTO model = new TutorDTO();
+		if (id != null) {
+			model = tutorService.findById(id);
+		}
+		if (request.getParameter("message") != null) {
+			Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
+			mav.addObject("message", message.get("message"));
+			mav.addObject("alert", message.get("alert"));
+		}
+		mav.addObject("users", tutorService.getAll());
+		mav.addObject("model", model);
+		return mav;
+	}
+
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView loginPage() {
 		ModelAndView mav = new ModelAndView("login");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/dang-ky", method = RequestMethod.GET)
+	public ModelAndView registrationPage() {
+		RegisterDTO regisDTO = new RegisterDTO();
+		ModelAndView mav = new ModelAndView("register");
+		mav.addObject("model", regisDTO);
 		return mav;
 	}
 	

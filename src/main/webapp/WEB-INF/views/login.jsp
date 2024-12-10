@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<!-- <h1 class="form-heading">login Form</h1> -->
+		<h1 style="margin-top: 100px; text-align: center;">Đăng Nhập</h1>
 		<div class="login-form">
 			<div class="main-div">
 				<c:if test="${param.incorrectAccount != null}">

@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
-		<a class="navbar-brand" href="#">Start Bootstrap</a>
+		<a class="navbar-brand" href="#">Peonyy~</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarResponsive" aria-controls="navbarResponsive"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -15,11 +15,14 @@
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<security:authorize access = "isAnonymous()">
-					<li class="nav-item"><a class="nav-link" href="#">Đăng nhập</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Đăng ký</a></li>
+					<li class="nav-item"><a class="nav-link" href="<c:url value='/dang-nhap'/>">Đăng nhập</a></li>
+					<li class="nav-item"><a class="nav-link" href="<c:url value='/dang-ky'/>">Đăng ký</a></li>
 				</security:authorize>
 				<security:authorize access = "isAuthenticated()">
-					<li class="nav-item"><a class="nav-link" href="#">Wellcome <%=SecurityUtils.getPrincipal().getFullName()%></a></li>
+					<li class="nav-item"><a class="nav-link" href="<c:url value='/info'>
+																		<c:param name="userId" value="${SecurityUtils.getPrincipal().getId()}"/>															
+																	</c:url>"
+																	>Wellcome <%=SecurityUtils.getPrincipal().getFullName()%></a></li>
 					<li class="nav-item"><a class="nav-link" href="<c:url value='/thoat'/>">Thoát</a></li>
 				</security:authorize>
 			</ul>

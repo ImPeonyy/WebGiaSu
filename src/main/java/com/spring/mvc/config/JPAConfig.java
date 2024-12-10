@@ -48,7 +48,7 @@ public class JPAConfig {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/springmvcbasicfree");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/webgiasu");
 		dataSource.setUsername("peony");
 		dataSource.setPassword("12345678");
 		return dataSource;

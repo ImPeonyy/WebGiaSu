@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
 import com.spring.mvc.constant.SystemConstant;
 import com.spring.mvc.dto.MyUser;
 import com.spring.mvc.entity.RoleEntity;
@@ -37,6 +36,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		MyUser myUser = new MyUser(userEntity.getUserName(), userEntity.getPassword(), 
 							true, true, true, true, authorities);
 		myUser.setFullName(userEntity.getFullName());
+		myUser.setId(userEntity.getId());
 		return myUser;
 	}
 
