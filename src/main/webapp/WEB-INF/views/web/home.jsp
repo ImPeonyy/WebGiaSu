@@ -31,9 +31,9 @@
 						<div class="card h-100">
 							<div class="card-body">
 								<h2 class="card-title">${item.fullName}</h2>
-								<p class="card-text">${item.specialization}</p>
-								<p class="card-text">${item.availableTimes}</p>
-								<p class="card-text">${item.hourlyRate}</p>
+								<p class="card-text"><strong>Chuyên môn: </strong>${item.specialization}</p>
+								<p class="card-text"><strong>Thời gian: </strong>${item.availableTimes}</p>
+								<p class="card-text"><strong>Giá thuê: </strong>${item.hourlyRate}</p>
 							</div>
 							<div class="card-footer">
 								<a href="<c:url value='/trang-chu/info'>
@@ -43,9 +43,9 @@
 						</div>						
 					</div>
 				</c:forEach>
-				</div>						
+				</div>					
 		</div>
-	</div>
+		
 </body>
 
 </html>

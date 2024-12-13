@@ -1,5 +1,10 @@
 package com.spring.mvc.service;
 
-public class IRateService {
+import java.util.List;
 
+import com.spring.mvc.dto.RateDTO;
+
+public interface IRateService {
+	List<RateDTO> findAllByTutorId(long userId);
+	RateDTO save(RateDTO dto);
 }

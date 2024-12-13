@@ -1,4 +1,5 @@
 <%@ page import="com.spring.mvc.util.SecurityUtils" %>
+<%@include file="/common/taglib.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -11,7 +12,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item active"><a class="nav-link" href="<c:url value='/trang-chu'/>">Trang chủ
+				<li class="nav-item active"><a class="nav-link" href="<c:url value='/trang-chu?page=1&limit=5'/>">Trang chủ
 						<span class="sr-only">(current)</span>
 				</a></li>
 				<security:authorize access = "isAnonymous()">

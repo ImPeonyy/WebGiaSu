@@ -34,6 +34,7 @@
 </div>
 
 <script>
+$(document).ready(function() {
 	$('#registerBtn').click(function (e) {
 	    e.preventDefault();
 	    var data = {};
@@ -41,6 +42,7 @@
 	    $.each(formData, function (i, v) {
             data[""+v.name+""] = v.value;
         });
+	    if(username.value!="" && password.value!="" && fullName.value!="")
 	    	register(data);
 	});
 	
@@ -59,7 +61,7 @@
             }
         });
 	}
-	
+});
 </script>
 </body>
 </html>

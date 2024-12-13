@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Trang chủ</title>
+<title><dec:title default="Trang chủ" /></title>
 
 <!-- Bootstrap core CSS -->
 <link href="<c:url value='/template/web/vendor/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet" type="text/css">
@@ -17,6 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value='/template/web/css/home.css'/>" />
 </head>
 <body>
 	<!-- Navigation -->
@@ -28,6 +29,7 @@
 	<%@ include file="/common/web/footer.jsp" %>
 
 	<!-- Bootstrap core JavaScript -->
+	<script src="<c:url value='/template/admin/paging/jquery.twbsPagination.js' />"></script>
 	<script src="<c:url value='/template/web/vendor/jquery/jquery.min.js'/>"></script>
 	<script src="<c:url value='/template/web/vendor/bootstrap/js/bootstrap.bundle.min.js'/>"></script>
 </body>

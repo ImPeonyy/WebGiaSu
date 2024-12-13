@@ -37,14 +37,7 @@
 									<div class="table-btn-controls">
 										<div class="pull-right tableTools-container">
 											<div class="dt-buttons btn-overlap btn-group">
-												<c:url var="createTutorURL" value="/quan-tri/gia-su/chinh-sua"/>
-												<a flag="info"
-												   class="dt-button buttons-colvis btn btn-white btn-primary btn-bold" data-toggle="tooltip"
-												   title='Thêm Gia Sư' href='${createTutorURL}'>
-															<span>
-																<i class="fa fa-plus-circle bigger-110 purple"></i>
-															</span>
-												</a>
+													
 												<button id="btnDelete" type="button" onclick="warningBeforeDelete()"
 														class="dt-button buttons-html5 btn btn-white btn-primary btn-bold" data-toggle="tooltip" title='Xóa Gia Sư'>
 																<span>
@@ -55,6 +48,10 @@
 										</div>
 									</div>
 								</div>
+								<form action="<c:url value="/quan-tri/gia-su/danh-sach/search"/>">
+								<input type="text" name="freeText" placeholder="Enter...">
+								<button>Find</button>
+								</form>
 								<div class="row">
 									<div class="col-xs-12">
 										<div class="table-responsive">

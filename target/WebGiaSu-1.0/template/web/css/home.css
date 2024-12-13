@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* Comment Submit */
+/* Khung tổng thể của phần bình luận */
+.comment-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề phần thêm bình luận */
+.comment-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+}
+
+/* Form thêm bình luận */
+.comment-form input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.comment-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Phần đánh giá ngôi sao */
+.rating-stars {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.star-rating {
+    direction: rtl; /* Hiển thị từ phải qua trái */
+    display: inline-flex;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+.star-rating input[type="radio"] {
+    display: none; /* Ẩn các radio button */
+}
+
+.star-rating label {
+    cursor: pointer;
+    color: #dcdcdc; /* Màu mặc định cho ngôi sao */
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffd700; /* Hiệu ứng hover: tất cả các ngôi sao phía trước đổi thành màu vàng */
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    color: #ffd700; /* Đổi màu các ngôi sao được chọn */
+}
+
+/* Nút gửi bình luận */
+.submit-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Comments */
+.comments-container {
+    margin: 20px auto;
+    width: 80%;
+    font-family: Arial, sans-serif;
+}
+
+.comment-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-date {
+    font-style: italic;
+    font-size: 12px;
+    color: #777;
+}
+
+.comment-content {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.comment-rating {
+    font-size: 18px;
+    color: #FFD700;
+}
+
+.stars {
+    display: inline-block;
+    color: #ffd700; /* Màu vàng cho ngôi sao đã đánh giá */
+    font-size: 20px; /* Kích thước ngôi sao */
+}
+
+.stars .filled {
+    color: #ffd700; /* Ngôi sao đã được chọn */
+}
+
+.stars .empty {
+    color: #dcdcdc; /* Ngôi sao chưa được chọn (màu xám nhạt) */
+}
+
+/* Pro5 */
+/* Tổng thể cho phần hiển thị thông tin gia sư */
+.tutor-info {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề tên gia sư */
+.tutor-info h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Các đoạn thông tin chi tiết */
+.tutor-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.tutor-info p strong {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Nút kêu gọi hành động */
+.tutor-info .btn {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.tutor-info .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Điều chỉnh cho thiết bị di động */
+@media (max-width: 768px) {
+    .tutor-info {
+        padding: 15px;
+    }
+
+    .tutor-info h1 {
+        font-size: 24px;
+    }
+
+    .tutor-info p {
+        font-size: 14px;
+    }
+
+    .tutor-info .btn {
+        width: 70%;
+    }
+}

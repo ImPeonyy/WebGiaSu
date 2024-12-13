@@ -106,4 +106,15 @@ public class TutorService implements ITutorService{
 	        return null;  // or throw an exception, or return a default DTO
 	    }
 	}
+
+	@Override
+	public List<TutorDTO> findAll(Pageable pageable, String freeText) {
+		List<TutorDTO> models = new ArrayList<>();
+		List<TutorEntity> entities = tutorRepository.findByUserFullNameContainingIgnoreCaseOrSpecializationContainingIgnoreCaseOrHourlyRateContainingIgnoreCaseOrEducationContainingIgnoreCase(pageable, freeText, freeText, freeText, freeText).getContent();
+		for (TutorEntity item: entities) {
+			TutorDTO TutorDTO = TutorConverter.toDto(item);
+			models.add(TutorDTO);
+		}
+		return models;
+	}
 }

@@ -21,16 +21,16 @@ public class TutorEntity extends BaseEntity  {
 	@Column(name = "education")
 	private String education;
 
-	@Column(name = "experience")
+	@Column(name = "experience", columnDefinition = "TEXT")
 	private String experience;
 
-	@Column(name = "bio")
+	@Column(name = "bio", columnDefinition = "TEXT")
 	private String bio;
 	
-	@Column(name = "hourly_rate")
+	@Column(name = "hourly_rate", columnDefinition = "TEXT")
 	private String hourlyRate;
 	
-	@Column(name = "available_times")
+	@Column(name = "available_times", columnDefinition = "TEXT")
 	private String availableTimes;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

@@ -13,7 +13,7 @@ public class RateEntity extends BaseEntity{
 	@Column(name = "rate")
 	private Integer rate;
 
-	@Column(name = "comment")
+	@Column(name = "comment", columnDefinition = "TEXT")
 	private String comment;
 	
 	@ManyToOne(fetch = FetchType.LAZY)

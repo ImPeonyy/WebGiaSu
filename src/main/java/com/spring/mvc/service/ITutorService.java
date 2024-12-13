@@ -10,6 +10,7 @@ import com.spring.mvc.dto.TutorDTO;
 public interface ITutorService {
 	List<TutorDTO> findAll(Pageable pageable);
 	List<TutorDTO> findAll();
+	List<TutorDTO> findAll(Pageable pageable, String freeText);
 	int getTotalItem();
 	TutorDTO findById(long id);
 	TutorDTO findByUserId(long userId);

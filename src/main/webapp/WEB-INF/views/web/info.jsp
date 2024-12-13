@@ -21,16 +21,11 @@
 						</div>
 					</c:if>
 					<form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
-						<div class="form-group">
-						  	<label for="content" class="col-sm-3 control-label no-padding-right">User ID: </label>
-						  	<div class="col-sm-9">
-						  		<form:input path="userID" rows="5" cols="10" cssClass="form-control" id="content"/>
-						  	</div>
-						</div>
+						  		<form:hidden path="userID" value="${model.userID}"/>
 						<div class="form-group">
 						  	<label for="content" class="col-sm-3 control-label no-padding-right">Full Name: </label>
 						  	<div class="col-sm-9">
-						  		<form:input path="fullName" rows="5" cols="10" cssClass="form-control" id="content"/>
+						  		<form:input path="fullName" rows="5" cols="10" cssClass="form-control" id="content" disabled="true"/>
 						  	</div>
 						</div>
 						<div class="form-group">
@@ -55,7 +50,7 @@
 						<div class="form-group">
 						  	<label for="content" class="col-sm-3 control-label no-padding-right">Experience: </label>
 						  	<div class="col-sm-9">
-						  		<form:input path="experience" rows="5" cols="10" cssClass="form-control" id="content"/>
+						  		<form:textarea path="experience" rows="5" cols="10" cssClass="form-control" id="content"/>
 						  	</div>
 						</div>
 						<div class="form-group">
@@ -67,7 +62,7 @@
 						<div class="form-group">
 						  	<label for="content" class="col-sm-3 control-label no-padding-right">Hourly Rate: </label>
 						  	<div class="col-sm-9">
-						  		<form:input path="hourlyRate" rows="5" cols="10" cssClass="form-control" id="content"/>
+						  		<form:textarea path="hourlyRate" rows="5" cols="10" cssClass="form-control" id="content"/>
 						  	</div>
 						</div>
 						<div class="form-group">
@@ -77,7 +72,7 @@
 						  	</div>
 						</div>
 						<form:hidden path="id" id="tutorId"/>
-						<div class="clearfix form-actions">
+						<div class="clearfix form-actions" style="margin-bottom: 10px">
 							<div class="col-md-offset-3 col-md-9">
 											<c:if test="${not empty model.id}">
 												<button class="btn btn-info" type="button" id="btnAddOrUpdateTutor">
@@ -92,8 +87,7 @@
 												</button>
 											</c:if>
 
-											&nbsp; &nbsp; &nbsp;
-											<button class="btn" type="reset" id="back">
+											<button class="btn bg-secondary" type="reset" id="back">
 												<i class="ace-icon fa fa-undo bigger-110"></i>
 												Cancel
 											</button>
@@ -133,7 +127,7 @@
             	window.location.href = "${infoURL}?userId="+result.userID+"&message=update_success";
             },
             error: function (error) {
-            	window.location.href = "${infoURL}?userId="+result.userID+"&message=error_system";
+            	window.location.href = "${infoURL}?userId=${model.userID}&message=error_system";
             }
         });
 	}
@@ -149,7 +143,7 @@
             	window.location.href = "${infoURL}?userId="+result.userID+"&message=update_success";
             },
             error: function (error) {
-            	window.location.href = "${infoURL}?userId="+result.userID+"&message=error_system";
+            	window.location.href = "${infoURL}?userId="+error.userID+"&message=error_system";
             }
         });
 	}

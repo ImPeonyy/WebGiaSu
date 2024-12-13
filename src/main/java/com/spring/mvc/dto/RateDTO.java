@@ -6,6 +6,7 @@ public class RateDTO extends AbstractDTO<RateDTO>{
 	private Long tutorID;
 	private Long userID;
 	private String fullName;
+	
 	public Integer getRate() {
 		return rate;
 	}

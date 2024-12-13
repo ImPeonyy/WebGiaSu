@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.mvc.dto.RateDTO;
 import com.spring.mvc.dto.RegisterDTO;
 import com.spring.mvc.dto.TutorDTO;
+import com.spring.mvc.service.IRateService;
 import com.spring.mvc.service.ITutorService;
 import com.spring.mvc.util.MessageUtil;
 import com.spring.mvc.util.SecurityUtils;
@@ -28,6 +30,9 @@ public class HomeController {
 	
 	@Autowired
 	private ITutorService tutorService;
+	
+	@Autowired
+	private IRateService rateService;
 	
 	@Autowired
 	private MessageUtil messageUtil;
@@ -63,15 +68,12 @@ public class HomeController {
 	public ModelAndView tutorDetail(@RequestParam(value = "id", required = false) Long id, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView("web/tutorDetail");
 		TutorDTO model = new TutorDTO();
-		if (id != null) {
-			model = tutorService.findById(id);
-		}
-		if (request.getParameter("message") != null) {
-			Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
-			mav.addObject("message", message.get("message"));
-			mav.addObject("alert", message.get("alert"));
-		}
-		mav.addObject("users", tutorService.getAll());
+		RateDTO rate = new RateDTO();
+		RateDTO rateSubmit = new RateDTO();
+		model = tutorService.findById(id);
+		rate.setListResult(rateService.findAllByTutorId(id));
+		mav.addObject("rateSubmit", rateSubmit);
+		mav.addObject("rate", rate);
 		mav.addObject("model", model);
 		return mav;
 	}
