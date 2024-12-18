@@ -73,7 +73,7 @@
 					<c:forEach var="item" items="${rate.listResult}">
 						<div class="comment-box">
 							<div class="comment-header">
-								<span class="comment-author">${item.createdBy}</span> <span
+								<span class="comment-author">${item.fullName}</span> <span
 									class="comment-date">${item.createdDate}</span>
 							</div>
 							<div class="stars">
