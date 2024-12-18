@@ -17,12 +17,13 @@
 
 	<!-- Page Content -->
 	<div class="container">
-		<!-- Call to Action Well -->
+	<form action="<c:url value='/trang-chu'/>" id="formSubmit" method="get">
 		<div class="card text-white bg-secondary my-5 py-4 text-center">
 			<div class="card-body">
-				<p class="text-white m-0">This call to action card is a great
-					place to showcase some important information or display a clever
-					tagline!</p>
+				<form action="#" method="get" style="margin-top:10px; margin-left:10px;">
+					<input type="text" name="searchTerm" placeholder="Search tutors">
+					<button type="submit">Search</button>
+				</form>
 			</div>
 		</div>
 				<div class="row">
@@ -43,7 +44,8 @@
 						</div>						
 					</div>
 				</c:forEach>
-				</div>					
+				</div>		
+		</form>		
 		</div>
 		
 </body>

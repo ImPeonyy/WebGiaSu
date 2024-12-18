@@ -1,0 +1,63 @@
+use webgiasu;
+
+insert into role(code,name) values('ADMIN','Quản trị');
+insert into role(code,name) values('USER','Người dùng');
+
+insert into user(username,password,fullname,status)
+values('admin','$2a$10$/RUbuT9KIqk6f8enaTQiLOXzhnUkiwEJRdtzdrMXXwU7dgnLKTCYG','Peonyy~',1);
+
+INSERT INTO user (createdby, createddate, modifiedby, modifieddate, fullname, password, status, username)
+VALUES
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Lê Ngọc Hân', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu1'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Nguyễn Thị Lan', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu2'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Trần Minh Tuấn', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu3'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Phạm Thị Mai', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu4'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Lê Đức Hòa', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu5'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Nguyễn Thị Thanh', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu6'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Trần Minh Đức', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu7'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Phạm Anh Khoa', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu8'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Lê Quang Hieu', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu9'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Nguyễn Hải Nam', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'giasu10');
+
+INSERT INTO user (createdby, createddate, modifiedby, modifieddate, fullname, password, status, username)
+VALUES
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Lê Quang Bảo', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'user1'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Nguyễn Kim Duyên', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'user2'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Trần Thị Mai Linh', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'user3'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Phạm Minh Hoàng', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'user4'),
+('anonymousUser', '2024-12-14 23:10:51', 'anonymousUser', '2024-12-14 23:10:51', 'Lê Thị Thảo', '$2a$10$DmY85tFCvqkdbdBPDtoAx.U8Eky/C0Za7hz/GrcYJOSJzoYaC6aee', 1, 'user5');
+
+
+INSERT INTO user_role(userid,roleid) VALUES (1,1);
+INSERT INTO user_role (userid, roleid)
+VALUES 
+(2, 2),
+(3, 2),
+(4, 2),
+(5, 2),
+(6, 2),
+(7, 2),
+(8, 2),
+(9, 2),
+(10, 2),
+(11, 2),
+(12, 2),
+(13, 2),
+(14, 2),
+(15, 2),
+(16, 2);
+
+INSERT INTO tutor (createdby, createddate, modifiedby, modifieddate, available_times, bio, education, experience, hourly_rate, specialization, user_id)
+VALUES
+('giasu1', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 6: 9:00 AM - 5:00 PM', '<br>Gmail: giasu1@gmail.com <br>SDT: 0973498756', 'Tiến Sĩ', 'Có 6 năm kinh nghiệm giảng dạy Toán cho học sinh từ cấp 2 đến cấp 3. Đã giúp nhiều học sinh đạt điểm cao trong các kỳ thi toán học quốc gia và quốc tế.', '200.000/h', 'Toán Học', 2),
+('giasu2', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 7: 9:00 AM - 6:00 PM', '<br>Gmail: giasu2@gmail.com <br>SDT: 0973498757', 'Thạc Sĩ', 'Có 5 năm kinh nghiệm giảng dạy Vật Lý và Toán học cho học sinh cấp 3, chuyên hỗ trợ thi vào các trường đại học.', '220.000/h', 'Vật Lý, Toán Học', 3),
+('giasu3', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 6: 8:00 AM - 4:00 PM', '<br>Gmail: giasu3@gmail.com <br>SDT: 0973498758', 'Cử nhân Hóa Học', '3 năm kinh nghiệm giảng dạy môn Hóa học cho học sinh cấp 2 và cấp 3, giúp học sinh hiểu rõ lý thuyết và phương pháp giải bài tập Hóa học.', '180.000/h', 'Hóa Học', 4),
+('giasu4', '2024-12-14 23:10:51', null, null, 'Thứ 3 - Thứ 7: 9:00 AM - 5:00 PM', '<br>Gmail: giasu4@gmail.com <br>SDT: 0973498759', 'Thạc Sĩ', 'Có 4 năm kinh nghiệm giảng dạy môn Văn cho học sinh cấp 2 và cấp 3, chuyên giúp học sinh cải thiện kỹ năng viết và đọc hiểu.', '210.000/h', 'Văn', 5),
+('giasu5', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 6: 10:00 AM - 5:00 PM', '<br>Gmail: giasu5@gmail.com <br>SDT: 0973498760', 'Cử nhân Tiếng Anh', 'Có 6 năm kinh nghiệm giảng dạy Tiếng Anh cho học sinh cấp 1 và cấp 2. Chuyên giúp học sinh phát âm chuẩn và cải thiện kỹ năng nghe-nói.', '200.000/h', 'Tiếng Anh', 6),
+('giasu6', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 7: 9:00 AM - 6:00 PM', '<br>Gmail: giasu6@gmail.com <br>SDT: 0973498761', 'Tiến Sĩ', 'Có 8 năm kinh nghiệm giảng dạy môn Toán cho học sinh cấp 3. Chuyên dạy phương pháp giải nhanh các bài toán đại số và giải tích.', '250.000/h', 'Toán Học, Giải tích', 7),
+('giasu7', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 5: 8:00 AM - 4:00 PM', '<br>Gmail: giasu7@gmail.com <br>SDT: 0973498762', 'Thạc Sĩ', 'Có 4 năm kinh nghiệm giảng dạy môn Lý cho học sinh cấp 3, chuyên dạy lý thuyết và bài tập thực hành cho kỳ thi đại học.', '230.000/h', 'Lý', 8),
+('giasu8', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 7: 9:00 AM - 5:00 PM', '<br>Gmail: giasu8@gmail.com <br>SDT: 0973498763', 'Cử nhân Toán học', 'Có 3 năm kinh nghiệm giảng dạy môn Toán cho học sinh cấp 2. Chuyên luyện thi vào lớp 10 và thi đại học.', '190.000/h', 'Toán Học, Đại số', 9),
+('giasu9', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 6: 10:00 AM - 6:00 PM', '<br>Gmail: giasu9@gmail.com <br>SDT: 0973498764', 'Thạc Sĩ', 'Giảng dạy môn Hóa học và Vật lý với các phương pháp giải bài tập và lý thuyết hiệu quả, giúp học sinh nắm vững kiến thức chuẩn bị cho kỳ thi THPT quốc gia.', '240.000/h', 'Hóa Học, Vật Lý', 10),
+('giasu10', '2024-12-14 23:10:51', null, null, 'Thứ 2 - Thứ 7: 8:00 AM - 5:00 PM', '<br>Gmail: giasu10@gmail.com <br>SDT: 0973498765', 'Tiến Sĩ', 'Có 7 năm kinh nghiệm giảng dạy môn Toán cho học sinh cấp 3, chuyên giải thích các bài toán nâng cao và luyện đề thi vào các trường đại học.', '300.000/h', 'Toán Học, Giải tích', 11);
+
+

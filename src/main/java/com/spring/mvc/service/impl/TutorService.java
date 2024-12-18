@@ -108,9 +108,9 @@ public class TutorService implements ITutorService{
 	}
 
 	@Override
-	public List<TutorDTO> findAll(Pageable pageable, String freeText) {
+	public List<TutorDTO> searchTutorsByTerm(String searchTerm) {
 		List<TutorDTO> models = new ArrayList<>();
-		List<TutorEntity> entities = tutorRepository.findByUserFullNameContainingIgnoreCaseOrSpecializationContainingIgnoreCaseOrHourlyRateContainingIgnoreCaseOrEducationContainingIgnoreCase(pageable, freeText, freeText, freeText, freeText).getContent();
+		List<TutorEntity> entities = tutorRepository.searchTutors(searchTerm);
 		for (TutorEntity item: entities) {
 			TutorDTO TutorDTO = TutorConverter.toDto(item);
 			models.add(TutorDTO);

@@ -12,7 +12,9 @@
 	</head>
 
 	<body>
-		<div class="main-content">	
+		<div class="main-content">
+		<form action="<c:url value='/quan-tri/gia-su/search'/>" id="formSubmit" method="get">
+			
 				<div class="main-content-inner">
 					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 						<ul class="breadcrumb">
@@ -23,11 +25,6 @@
 						</ul>
 						<!-- /.breadcrumb -->
 					</div>
-			<form action="/quan-tri/gia-su/search" method="get" style="margin-top:10px; margin-left:10px;">
-				<input type="text" name="searchTerm" placeholder="Search tutors">
-				<button type="submit">Search</button>
-			</form>
-				<form action="<c:url value='/quan-tri/gia-su/danh-sach'/>" id="formSubmit" method="get">
 					<div class="page-content">
 						<div class="row">
 							<div class="col-xs-12">
@@ -51,6 +48,11 @@
 										</div>
 									</div>
 								</div>
+								<form action="#" method="get">
+								    <input type="text" name="searchTerm" value="${searchTerm}" placeholder="Search tutors">
+								    <button type="submit">Search</button>
+								</form>
+
 
 								<div class="row">
 									<div class="col-xs-12">
@@ -91,38 +93,18 @@
 														</tr>
 													</c:forEach>
 												</tbody>
-											</table>
-											<ul class="pagination" id="pagination"></ul>	
-											<input type="hidden" value="" id="page" name="page"/>
-											<input type="hidden" value="" id="limit" name="limit"/>									
+											</table>								
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</form>
 				</div>
+		</form>
 		</div>
 		<!-- /.main-content -->
 		<script>
-			var totalPages = ${model.totalPage};
-			var currentPage = ${model.page};
-			$(function () {
-		        window.pagObj = $('#pagination').twbsPagination({
-		            totalPages: totalPages,
-		            visiblePages: 10,
-		            startPage: currentPage,
-		            onPageClick: function (event, page) {
-		            	if (currentPage != page) {
-		            		$('#limit').val(5);
-							$('#page').val(page);
-							$('#formSubmit').submit();
-						}
-		            }
-		        });
-		    });
-			
 			function warningBeforeDelete() {
 					swal({
 					  title: "Xác nhận xóa",

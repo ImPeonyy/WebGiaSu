@@ -45,18 +45,11 @@ public class TutorController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/quan-tri/gia-su/danh-sach/search", method = RequestMethod.GET)
-	public ModelAndView serchList(@RequestParam("page") int page, 
-								 @RequestParam("limit") int limit, 
-								 @RequestParam("freeText") String freeText, HttpServletRequest request) {
+	@RequestMapping(value = "/quan-tri/gia-su/search", method = RequestMethod.GET)
+	public ModelAndView serchList(@RequestParam(required = false) String searchTerm, HttpServletRequest request) {
 		TutorDTO model = new TutorDTO();
-		model.setPage(page);
-		model.setLimit(limit);
-		ModelAndView mav = new ModelAndView("admin/tutor/list");
-		Pageable pageable = new PageRequest(page - 1, limit);
-		model.setListResult(tutorService.findAll(pageable, freeText));
-		model.setTotalItem(tutorService.getTotalItem());
-		model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getLimit()));
+		ModelAndView mav = new ModelAndView("admin/tutor/search");
+		model.setListResult(tutorService.searchTutorsByTerm(searchTerm));
 		if (request.getParameter("message") != null) {
 			Map<String, String> message = messageUtil.getMessage(request.getParameter("message"));
 			mav.addObject("message", message.get("message"));

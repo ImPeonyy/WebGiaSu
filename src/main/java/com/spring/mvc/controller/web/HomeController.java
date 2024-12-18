@@ -38,10 +38,14 @@ public class HomeController {
 	private MessageUtil messageUtil;
 
 	@RequestMapping(value = "/trang-chu", method = RequestMethod.GET)
-	public ModelAndView homePage() {
+	public ModelAndView homePage(@RequestParam(required = false) String searchTerm) {
 		TutorDTO model = new TutorDTO();
 		ModelAndView mav = new ModelAndView("web/home");
-		model.setListResult(tutorService.findAll());
+		if(searchTerm != null) {
+			model.setListResult(tutorService.searchTutorsByTerm(searchTerm));
+		} else {
+			model.setListResult(tutorService.findAll());
+		}
 		mav.addObject("model", model);
 		return mav;
 	}
