@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.mvc.dto.RateDTO;
@@ -33,6 +35,9 @@ public class HomeController {
 	
 	@Autowired
 	private IRateService rateService;
+	
+	@Autowired
+    private RestTemplate restTemplate;
 	
 	@Autowired
 	private MessageUtil messageUtil;
@@ -74,8 +79,14 @@ public class HomeController {
 		TutorDTO model = new TutorDTO();
 		RateDTO rate = new RateDTO();
 		RateDTO rateSubmit = new RateDTO();
-		model = tutorService.findById(id);
-		rate.setListResult(rateService.findAllByTutorId(id));
+		
+		String rateUrl = "http://localhost:8888/api/rates?id=" + id;
+		String tutorUrl = "http://localhost:8888/api/tutor?id=" + id;
+		ResponseEntity<TutorDTO> tutorResponse = restTemplate.getForEntity(tutorUrl, TutorDTO.class);
+		ResponseEntity<RateDTO> rateResponse = restTemplate.getForEntity(rateUrl, RateDTO.class);
+	    model = tutorResponse.getBody();
+	    rate = rateResponse.getBody();
+		
 		mav.addObject("rateSubmit", rateSubmit);
 		mav.addObject("rate", rate);
 		mav.addObject("model", model);

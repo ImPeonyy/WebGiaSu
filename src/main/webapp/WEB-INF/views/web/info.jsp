@@ -150,7 +150,6 @@
 	
 	$('#back').click(function (e) {
 	    e.preventDefault();
-	    //window.location.href = "${homeURL}?page=1&limit=5";
 	    window.location.href = "${homeURL}";
 	});
 </script>

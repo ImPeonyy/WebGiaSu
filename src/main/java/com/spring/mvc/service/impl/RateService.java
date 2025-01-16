@@ -49,6 +49,7 @@ public class RateService implements IRateService{
 	@Transactional
 	public RateDTO save(RateDTO dto) {
 		UserEntity user = userRepository.findOne(SecurityUtils.getPrincipal().getId());
+//		UserEntity user = userRepository.findOne(dto.getUserID());
 		TutorEntity tutor = tutorRepository.findById(dto.getTutorID());
 		RateEntity rateEntity = new RateEntity();
 			rateEntity = rateConverter.toEntity(dto);

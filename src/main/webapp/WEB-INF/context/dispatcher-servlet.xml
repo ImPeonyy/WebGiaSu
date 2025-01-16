@@ -33,6 +33,9 @@
 
    </bean>
    
+   <!-- Cấu hình RestTemplate -->
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
+   
    <mvc:resources mapping="/template/**" location="/template/" />
    
 </beans>

@@ -57,13 +57,14 @@ public class TutorService implements ITutorService{
 	@Transactional
 	public TutorDTO save(TutorDTO dto) {
 		UserEntity user = userRepository.findOne(SecurityUtils.getPrincipal().getId());
+//		UserEntity user = userRepository.findOne(dto.getUserID());
 		TutorEntity tutorEntity = new TutorEntity();
 		if (dto.getId() != null) {
 			TutorEntity oldTutor = tutorRepository.findOne(dto.getId());
 			tutorEntity = TutorConverter.toEntity(oldTutor, dto);
 		} else {
 			tutorEntity = TutorConverter.toEntity(dto);
-			tutorEntity.setUser(user);;
+			tutorEntity.setUser(user);
 		}
 		return TutorConverter.toDto(tutorRepository.save(tutorEntity));
 	}

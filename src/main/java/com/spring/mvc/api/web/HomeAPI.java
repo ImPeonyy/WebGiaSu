@@ -1,4 +1,4 @@
-package com.spring.mvc.api.admin;
+package com.spring.mvc.api.web;
 
 import java.util.Collections;
 
@@ -19,8 +19,8 @@ import com.spring.mvc.entity.UserEntity;
 import com.spring.mvc.repository.RoleRepository;
 import com.spring.mvc.repository.UserRepository;
 
-@RestController(value = "newAPIOfAdmin")
-public class NewAPI {
+@RestController(value = "HomeAPI")
+public class HomeAPI {
 	
 	@Autowired
 	private UserRepository userRepository;

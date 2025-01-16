@@ -106,6 +106,13 @@
 		</div>
 		<!-- /.main-content -->
 		<script>
+		
+			$(document).ready(function () {
+		        $('#checkAll').click(function () {
+		            $('tbody input[type=checkbox]').prop('checked', this.checked);
+		        });
+		    });
+		
 			var totalPages = ${model.totalPage};
 			var currentPage = ${model.page};
 			$(function () {
@@ -134,7 +141,7 @@
 					  confirmButtonText: "Xác nhận",
 					  cancelButtonText: "Hủy bỏ",
 					}).then(function(isConfirm) {
-					  if (isConfirm) {
+					  if (isConfirm.value === true) {
 							var ids = $('tbody input[type=checkbox]:checked').map(function () {
 					            return $(this).val();
 					        }).get();
@@ -142,6 +149,7 @@
 					  }
 					});
 			} 
+			
 			function deleteTutor(data) {
 		        $.ajax({
 		            url: '${tutorAPI}',

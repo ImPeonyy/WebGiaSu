@@ -17,7 +17,6 @@ public interface TutorRepository extends JpaRepository<TutorEntity, Long> {
 		       "(LOWER(u.fullName) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR :searchTerm IS NULL) " +
 		       "OR (LOWER(t.specialization) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR :searchTerm IS NULL) " +
 		       "OR (LOWER(t.education) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR :searchTerm IS NULL) " +
-		       "OR (LOWER(t.experience) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR :searchTerm IS NULL) " +
 		       "OR (LOWER(t.hourlyRate) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR :searchTerm IS NULL) " +
 		       "OR (LOWER(t.availableTimes) LIKE LOWER(CONCAT('%', :searchTerm, '%')) OR :searchTerm IS NULL)")
 	 List<TutorEntity> searchTutors(@Param("searchTerm") String searchTerm);
